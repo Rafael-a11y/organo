@@ -1,0 +1,27 @@
+.campo-texto /*Seleto da classe declarada no className de tag <div> de CampoTexto.js, ou seja, as declarações 
+definidads entre as chaves (blocos de declaração) serão aplicadas nas tags label e input dentro de <div> em CampoTexto.js*/
+{
+    /*Margem superior e inferior de 24 pixels e na esquerda e direita, 0*/
+    margin: 24px 0;
+}
+
+/*Regra com 3 declarações aplicadas à tag <label> da classe campo-texto, faz uma quebra de linha antes de 
+<input>, cria uma lacuna de 8 pixels entre label e input e altera a fonte de label para 24 pixels*/
+.campo-texto label
+{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+/*Regra com 7 declarações aplicadas à tag input da classe campo-texto, pega 100% da largura da tela*/
+.campo-texto input
+{
+    background-color: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 100%; 
+    border: none;
+    font-size: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+}
