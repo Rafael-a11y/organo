@@ -1,0 +1,17 @@
+/*Classe Banner.css*/
+
+.banner
+{
+    /*Dá uma cor para o fundo da mesma cor da imagem do banner, isso serve para dar a impressão para o usuário que a 
+    imagem do banner vai de uma borda a outra da tela, mas na verdade a imagem do banner fica centralizada por conta 
+    da propriedade de centralização que define o alinhamento do texto como 'center'*/
+    background-color: #6578F7;
+    text-align: center;
+}
+
+/*Define o tamanho da imagem como 100% para questões de responsividade*/
+.banner img
+{
+    max-width: 100%;
+
+}
