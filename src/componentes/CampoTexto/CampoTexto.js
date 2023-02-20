@@ -10,11 +10,12 @@ const CampoTexto = (props) =>
     {props.label} faz com que a String de <label> seja passada de parâmetro quando o componente <CampoTexto/> 
     for chamado no App.js, da seguinte forma <CampoTexto label='StringParametro'/>, entenda, uma tag html está
     sendo preenchida por parâmetro JavaScript, o mesmo serve para {props.placeholder}, faz com que a String de 
-    <input placeholder=''/> seja preenchida pela variável placeholder em App.js  */
+    <input placeholder=''/> seja preenchida pela variável placeholder em App.js
+    Required torna o campo obrigatório, recebe um valor booleano.  */
     return (
         <div className="campo-texto">
             <label>{props.label}</label>
-            <input placeholder={placeholderModificada}/>
+            <input required = {props.obrigatorio} placeholder={placeholderModificada}/>
         </div>
     )
 }
