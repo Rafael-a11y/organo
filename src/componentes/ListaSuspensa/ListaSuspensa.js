@@ -6,11 +6,11 @@ para cada elemento <option>, teremos uma key, que será de mesmo valor do <optio
 return <option key = {item}>{item}</option>*/
 const ListaSuspensa = (props) =>
 {
-    console.log(props.itens)
     return (
         <div className='lista-suspensa'>
             <label>{props.label}</label>
-             <select required = {props.obrigatorio}>
+             <select onChange={evento => props.aoAlterado(evento.target.value)} 
+             required = {props.required} value = {props.value}>
                 {props.itens.map(item =>
                     {
                         return <option key = {item}>{item}</option>
