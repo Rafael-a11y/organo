@@ -4,10 +4,10 @@ const CampoTexto = (props) =>
 {
     /*onChange() acontece sempre que o elemento é mudado, no caso do input, a cada dígito que o usuário fizer no input,
       este evento é ativado e chama aoDigitado, evento representa o evento, target é o elemento que está ligado à ele,
-      neste caso o input e value é o valor*/
+      neste caso o input e value é o valor, assim como variáveis, funções podem ser fornecidas no props*/
     const aoDigitado = (evento) =>
     {
-        props.aoAlterado(evento.target.value);
+        props.aoAlterado(evento.target.value); //aoAlterado() será uma função fornecida no componente <CampoTexto/>
     }
 
     /*Faz interpolação de String, atente-se às crases. Interpolação de String significa que idependente da string usada

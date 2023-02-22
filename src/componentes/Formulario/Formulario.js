@@ -3,9 +3,11 @@ import './Formulario.css';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import Botao from '../Botao/Botao';
 import { useState } from 'react';
-const Formulario = () => {
+
+const Formulario = (props) => {
     const times = 
     [
+        'Programação', 'Front-End', 'Data Science', 'Devops', 'UX e Design', 'Mobile', 'Inovação e Gestão'
     ];
 
     const [nome, setNome] = useState('');
@@ -18,7 +20,12 @@ const aoSalvar = (evento) =>
     /*preventDefault evita o comportamento padrão de envio do formulário, em html, isso seria feito faznendo onSubmit()
     retornar falso*/
     evento.preventDefault();
-    console.log("Formulário submetido => ", nome, cargo, imagem, time);
+    //Importante salientar que aqui é feito implícitamente um mapeamento do tipo: nome: nome, cargo: cargo... 
+    props.aoColaboradorCadastrado({
+        nome, 
+        cargo, 
+        imagem, 
+        time});
 }
 
     /*onSubmit = {} é um evento Javascript que significa ao enviar, dispara uma requisição post, com evento onSubmit
@@ -32,24 +39,24 @@ const aoSalvar = (evento) =>
                     obrigatorio = {true} 
                     placeholder="Digite seu nome" 
                     valor={nome}
-                    aoAlterado = {valor => setNome(valor)}
+                    aoAlterado = {valorP => setNome(valorP)}
                     />
                 <CampoTexto label="Cargo" 
                     obrigatorio = {true} 
                     placeholder="Digite seu cargo" 
                     valor = {cargo}
-                    aoAlterado = {valor => setCargo(valor)}
+                    aoAlterado = {valorP => setCargo(valorP)} /*valorP é apenas um parâmetro*/
                     />
                 <CampoTexto label="Imagem" 
                 placeholder="Digite o endereço da imagem" 
                 valor = {imagem}
-                aoAlterado = {valor => setImagem(valor)}
+                aoAlterado = {valorP => setImagem(valorP)}
                 />
                 <ListaSuspensa label = "Time" 
                     obrigatorio = {true} 
                     itens = {times}
                     valor = {time}
-                    aoAlterado = {valor => setTime(valor)}
+                    aoAlterado = {valorP => setTime(valorP)}
                 />
                 <Botao>
                     Criar card
